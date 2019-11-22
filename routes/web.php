@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ManyToManyController@index');
+Route::get('manyToManyData', 'ManyToManyController@manyToManyData')->name('manyToMany');
