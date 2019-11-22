@@ -19,4 +19,15 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Role');
     }
+
+    /**
+     * Returns the userRoles column html for datatables.
+     *
+     * @param \App\User
+     * @return string
+     */
+    public static function laratablesCustomUserRoles($user)
+    {
+        return $user->roles->implode('name', ',');
+    }
 }
