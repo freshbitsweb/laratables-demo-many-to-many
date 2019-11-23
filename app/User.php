@@ -30,4 +30,12 @@ class User extends Authenticatable
     {
         return $user->roles->implode('name', ',');
     }
+
+    public static function laratablesSearchUserRoles($query, $searchValue)
+    {
+        return $query->orWhereHas('roles', function ($query) use($searchValue) {
+            $query->where('name', 'like', "%". $searchValue ."%");
+        });
+    }
+
 }
