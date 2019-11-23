@@ -21,7 +21,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Returns the userRoles column html for datatables.
+     * Display the relationship data in custom column(UserRoles).
      *
      * @param \App\User
      * @return string
@@ -31,6 +31,13 @@ class User extends Authenticatable
         return $user->roles->implode('name', ',');
     }
 
+    /**
+     * Adds the condition for searching the User Roles.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder
+     * @param string search term
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
     public static function laratablesSearchUserRoles($query, $searchValue)
     {
         return $query->orWhereHas('roles', function ($query) use($searchValue) {
