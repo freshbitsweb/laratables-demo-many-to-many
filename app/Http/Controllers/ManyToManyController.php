@@ -15,7 +15,7 @@ class ManyToManyController extends Controller
      **/
     public function index()
     {
-        return view('manyToManyLaraTable');
+        return view('many_to_many');
     }
 
     /**
@@ -28,6 +28,4 @@ class ManyToManyController extends Controller
     {
         return Laratables::recordsOf(User::class);
     }
-
-
 }

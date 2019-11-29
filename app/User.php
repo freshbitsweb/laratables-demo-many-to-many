@@ -10,6 +10,11 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+    */
     public $timestamps = false;
 
     /**
@@ -25,7 +30,7 @@ class User extends Authenticatable
      *
      * @param \App\User
      * @return string
-     */
+    */
     public static function laratablesCustomUserRoles($user)
     {
         return $user->roles->implode('name', ',');
@@ -40,9 +45,9 @@ class User extends Authenticatable
      */
     public static function laratablesSearchUserRoles($query, $searchValue)
     {
-        return $query->orWhereHas('roles', function ($query) use($searchValue) {
+        return $query->orWhereHas('roles', function ($query) use ($searchValue) {
             $query->where('name', 'like', "%". $searchValue ."%");
         });
+        return $query;
     }
-
 }
