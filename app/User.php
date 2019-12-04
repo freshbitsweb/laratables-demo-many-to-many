@@ -33,7 +33,7 @@ class User extends Model
     }
 
     /**
-     * Display the relationship data in custom column(UserRoles).
+     * Display the relationship data in custom column(user_roles).
      *
      * @param \App\User
      * @return string
