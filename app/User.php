@@ -2,14 +2,10 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Model
 {
-    use Notifiable;
-
     /**
      * Indicates if the model should be timestamped.
      *
@@ -48,6 +44,5 @@ class User extends Authenticatable
         return $query->orWhereHas('roles', function ($query) use ($searchValue) {
             $query->where('name', 'like', "%". $searchValue ."%");
         });
-        return $query;
     }
 }
