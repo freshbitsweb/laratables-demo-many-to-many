@@ -3,7 +3,6 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\User;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +25,6 @@ $factory->define(User::class, function (Faker $faker) {
 });
 
 $factory->afterCreating(App\User::class, function ($user, $faker) {
-
     $roles = App\Role::inRandomOrder()->limit(mt_rand(1, 2))->get(['id'])->pluck('id');
     $user->roles()->attach($roles);
 });
