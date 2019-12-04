@@ -13,7 +13,6 @@
                     <th>User Roles</th>
                 </tr>
             </thead>
-            <tbody></tbody>
         </table>
     </div>
 
