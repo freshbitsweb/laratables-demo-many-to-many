@@ -25,7 +25,7 @@
                     { name: 'last_name' },
                     { name: 'start_date' },
                     { name: 'salary' },
-                    { name: 'userRoles',  orderable: false },
+                    { name: 'user_roles',  orderable: false },
                 ],
             });
         });

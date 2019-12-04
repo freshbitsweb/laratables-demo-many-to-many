@@ -12,4 +12,4 @@
 */
 
 Route::get('/', 'ManyToManyController@index');
-Route::get('manyToManyData', 'ManyToManyController@manyToManyData')->name('many_to_many');
+Route::get('many-to-many', 'ManyToManyController@manyToManyData')->name('many_to_many');
