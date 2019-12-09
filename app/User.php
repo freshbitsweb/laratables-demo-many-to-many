@@ -10,11 +10,12 @@ class User extends Model
      * Indicates if the model should be timestamped.
      *
      * @var bool
-    */
+     */
     public $timestamps = false;
 
     /**
      * The roles that belong to the user.
+     *
      */
     public function roles()
     {
@@ -37,7 +38,7 @@ class User extends Model
      *
      * @param \App\User
      * @return string
-    */
+     */
     public static function laratablesCustomUserRoles($user)
     {
         return $user->roles->implode('name', ',');

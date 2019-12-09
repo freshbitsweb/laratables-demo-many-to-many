@@ -10,7 +10,6 @@ class ManyToManyController extends Controller
     /**
      * Show Table Header column
      *
-     *
      * @return Illuminate\Http\Response
      **/
     public function index()
