@@ -18,7 +18,7 @@ class ManyToManyController extends Controller
     }
 
     /**
-     * return data of the Many To Many Relationship datatables.
+     * Returns data of the Many To Many Relationship datatables.
      *
      * @return Illuminate\Http\JsonResponse
      **/

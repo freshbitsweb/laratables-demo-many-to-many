@@ -12,13 +12,4 @@ class Role extends Model
      * @var bool
      */
     public $timestamps = false;
-
-    /**
-     * The users that belong to the role.
-     *
-     */
-    public function users()
-    {
-        return $this->belongsToMany('App\User');
-    }
 }
